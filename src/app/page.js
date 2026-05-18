@@ -1,5 +1,3 @@
-import data from "../data.json";
-
 "use client";
 
 const data = [
