@@ -36,12 +36,12 @@ const NAV_ITEMS = ["About", "People", "Contact"];
 
 const ACCENT_COLORS = ["#FF6B6B", "#FFD93D", "#6BCB77", "#4D96FF", "#C77DFF"];
 
-function getInitials(first, last) {
-  return `${first?.[0] ?? ""}${last?.[0] ?? ""}`.toUpperCase();
-}
-
 function getColor(index) {
   return ACCENT_COLORS[index % ACCENT_COLORS.length];
+}
+
+function getDicebearUrl(firstname, lastname) {
+  return `https://api.dicebear.com/9.x/pixel-art-neutral/png?seed=${encodeURIComponent(firstname + lastname)}`;
 }
 
 function scrollTo(id) {
@@ -286,14 +286,18 @@ export default function Page() {
                   <td style={{ padding: "10px 16px", color: "#666" }}>{person.id}</td>
                   <td style={{ padding: "10px 16px" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                      <div style={{
-                        width: 28, height: 28, borderRadius: "50%",
-                        background: getColor(i),
-                        display: "flex", alignItems: "center", justifyContent: "center",
-                        fontSize: "0.65rem", fontWeight: 700, color: "#0d0d0d", flexShrink: 0,
-                      }}>
-                        {getInitials(person.firstname, person.lastname)}
-                      </div>
+                      <img
+                        src={getDicebearUrl(person.firstname, person.lastname)}
+                        alt={person.firstname}
+                        width={32}
+                        height={32}
+                        style={{
+                          borderRadius: "50%",
+                          border: `2px solid ${getColor(i)}`,
+                          flexShrink: 0,
+                          imageRendering: "pixelated",
+                        }}
+                      />
                       {person.firstname}
                     </div>
                   </td>
@@ -341,7 +345,6 @@ export default function Page() {
           Have a question or want to work together? Drop me a message.
         </p>
 
-        {/* Contact links */}
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginBottom: "2.5rem" }}>
           {[
             { label: "GitHub", href: "https://github.com", color: "#f0f0f0", bg: "#1a1a1a" },
@@ -364,7 +367,6 @@ export default function Page() {
           ))}
         </div>
 
-        {/* Contact form */}
         {submitted ? (
           <div style={{
             background: "#6BCB7722", border: "1px solid #6BCB7755",
