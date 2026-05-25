@@ -30,6 +30,18 @@ const data = [
   { "id": 25, "firstname": "Enkhbileg", "lastname": "Erdenebaatar", "job": "no", "country": "mongol", "gmail": "Enkhbileg@gmail.com", "nas": 16, "items": [{ "id": 52, "name": "mouse" }], "height": 170 },
   { "id": 26, "firstname": "Enkhtushig", "lastname": "Sugar", "job": "no", "country": "mongol", "gmail": "Tuujii@gmail.com", "nas": 17, "items": [{ "id": 53, "name": "mouse" }], "height": 180 },
   { "id": 27, "firstname": "Erkhembileg", "lastname": "Munkhbat", "job": "no", "country": "mongol", "gmail": "ebi@gmail.com", "nas": 16, "items": [{ "id": 54, "name": "mouse" }], "height": 176 },
+  { "id": 55, "firstname": "frontend", "lastname": "bagsh", "job": "no", "country": "mongol", "gmail": "bagsh@gmail.com", "nas": 24, "items": [{ "id": 67, "name": "macbook" }], "height": 176 },
+  { "id": 56, "firstname": "math", "lastname": "bagsh", "job": "no", "country": "mongol", "gmail": "bagsh@gmail.com", "nas": 24, "items": [{ "id": 68, "name": "macbook" }], "height": 176 },
+  { "id": 57, "firstname": "mongol hel", "lastname": "bagsh", "job": "no", "country": "mongol", "gmail": "bagsh@gmail.com", "nas": 24, "items": [{ "id": 69, "name": "macbook" }], "height": 176 },
+  { "id": 58, "firstname": "niigem", "lastname": "bagsh", "job": "no", "country": "mongol", "gmail": "bagsh@gmail.com", "nas": 24, "items": [{ "id": 70, "name": "macbook" }], "height": 176 },
+  { "id": 59, "firstname": "tuuh", "lastname": "bagsh", "job": "no", "country": "mongol", "gmail": "bagsh@gmail.com", "nas": 24, "items": [{ "id": 71, "name": "macbook" }], "height": 176 },
+  { "id": 60, "firstname": "angli hel", "lastname": "bagsh", "job": "no", "country": "mongol", "gmail": "bagsh@gmail.com", "nas": 24, "items": [{ "id": 72, "name": "macbook" }], "height": 176 },
+  { "id": 61, "firstname": "java", "lastname": "bagsh", "job": "no", "country": "mongol", "gmail": "bagsh@gmail.com", "nas": 24, "items": [{ "id": 73, "name": "macbook" }], "height": 176 },
+  { "id": 62, "firstname": "design", "lastname": "bagsh", "job": "no", "country": "mongol", "gmail": "bagsh@gmail.com", "nas": 24, "items": [{ "id": 74, "name": "macbook" }], "height": 176 },
+  { "id": 63, "firstname": "hime", "lastname": "bagsh", "job": "no", "country": "mongol", "gmail": "bagsh@gmail.com", "nas": 24, "items": [{ "id": 75, "name": "macbook" }], "height": 176 },
+  { "id": 64, "firstname": "physics", "lastname": "bagsh", "job": "no", "country": "mongol", "gmail": "bagsh@gmail.com", "nas": 24, "items": [{ "id": 76, "name": "macbook" }], "height": 176 },
+  { "id": 65, "firstname": "biology", "lastname": "bagsh", "job": "no", "country": "mongol", "gmail": "bagsh@gmail.com", "nas": 24, "items": [{ "id": 77, "name": "macbook" }], "height": 176 },
+  { "id": 66, "firstname": "medeelel zui", "lastname": "bagsh", "job": "no", "country": "mongol", "gmail": "bagsh@gmail.com", "nas": 24, "items": [{ "id": 78, "name": "macbook" }], "height": 176 },
 ];
 
 const NAV_ITEMS = ["About", "People", "Contact"];
@@ -223,7 +235,6 @@ export default function Page() {
           People list
         </h2>
 
-        {/* Search */}
         <div style={{ marginBottom: "1rem" }}>
           <input
             type="text"
@@ -305,8 +316,8 @@ export default function Page() {
                   <td style={{ padding: "10px 16px", color: "#4D96FF", fontSize: "0.82rem" }}>{person.gmail}</td>
                   <td style={{ padding: "10px 16px", textAlign: "center" }}>
                     <span style={{
-                      background: person.nas === 17 ? "#FF6B6B22" : "#6BCB7722",
-                      color: person.nas === 17 ? "#FF6B6B" : "#6BCB77",
+                      background: person.nas === 17 ? "#FF6B6B22" : person.nas === 24 ? "#C77DFF22" : "#6BCB7722",
+                      color: person.nas === 17 ? "#FF6B6B" : person.nas === 24 ? "#C77DFF" : "#6BCB77",
                       padding: "2px 10px", borderRadius: "999px", fontSize: "0.8rem",
                     }}>
                       {person.nas}
